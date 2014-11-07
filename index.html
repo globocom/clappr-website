@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <style type="text/css" media="screen">
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: 'Roboto:thin', sans-serif;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #222;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+iframe {
+  width: 140px;
+}
+
+.container img {
+  height: 100px;
+  width: 500px;
+  color: white;
+}
+
+.container p {
+  color: white;
+  position: relative;
+  font-size: 1.9em;
+  text-shadow: 1px 1px 2px rgba(2, 2, 2, 0.5);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container iframe {
+  position: relative;
+  text-align: center;
+}
+
+.container {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  top: 15%;
+}
+
+.issues {
+  position: relative;
+  font-size: 1.8em;
+  top: 80px;
+  line-height: 5px;
+  text-shadow: 1px 1px 2px rgba(2, 2, 2, 0.5);
+  -webkit-font-smoothing: antialiased;
+}
+
+.overlay {
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  position: fixed;
+  background-image: -webkit-gradient(
+    linear, left top, left bottom, from(rgba(0,0,0,0.0)),
+    to(rgba(0,0,0,0.9))
+  );
+}
+
+  @media(min-width: 1200px) {
+    video {
+      width: 100%;
+    }
+
+  }
+
+    </style>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Clappr</title>
+  </head>
+
+  <body>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="content">
+          <img src="clappr.svg">
+          <p>An extensible media player for the web</p>
+          <iframe src="http://ghbtns.com/github-btn.html?user=globocom&repo=clappr&type=watch&size=large&count=true"
+            allowtransparency="true" frameborder="0" scrolling="0" height="40" width="120"></iframe>
+        </div>
+
+      </div>
+    <video preload="preload" autoplay loop poster="poster.png">
+      <source src="highline.mp4" type="video/mp4"/>
+      <source src="highline.webm" type="video/webm"/>
+    </video>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54463117-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
