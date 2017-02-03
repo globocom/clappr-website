@@ -3,6 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <style type="text/css" media="screen">
 
@@ -25,11 +26,11 @@ iframe {
   width: 160px;
 }
 
-.container img {
+.main-content img {
   color: white;
 }
 
-.container p {
+.main-content p {
   color: white;
   position: relative;
   font-size: 1.9em;
@@ -37,12 +38,12 @@ iframe {
   -webkit-font-smoothing: antialiased;
 }
 
-.container iframe {
+.main-content iframe {
   position: relative;
   text-align: center;
 }
 
-.container {
+.main-content {
   position: absolute;
   text-align: center;
   width: 100%;
@@ -71,11 +72,13 @@ iframe {
   );
 }
 
-  @media(min-width: 1200px) {
-    video {
-      width: 100%;
-    }
+  .player-container {
+    width: 100%;
+    height: 100%;
+  }
 
+  video {
+    object-fit: cover;
   }
 
     </style>
@@ -87,7 +90,7 @@ iframe {
 
   <body>
       <div class="overlay"></div>
-      <div class="container">
+      <div class="main-content">
         <div class="content">
           <img src="logo_clappr.png">
           <p>An extensible media player for the web</p>
@@ -96,10 +99,19 @@ iframe {
         </div>
 
       </div>
-    <video preload="preload" autoplay loop poster="poster.png">
-      <source src="highline.mp4" type="video/mp4"/>
-      <source src="highline.webm" type="video/webm"/>
-    </video>
+      <div id="player" class="player-container"></div>
+      <script>
+        var player = new Clappr.Player({
+          source: 'highline.mp4',
+          poster: 'poster.png',
+          autoPlay: true,
+          loop: true,
+          chromeless: true,
+          parentId: '#player',
+          width: '100%',
+          height: '100%'
+        });
+      </script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
